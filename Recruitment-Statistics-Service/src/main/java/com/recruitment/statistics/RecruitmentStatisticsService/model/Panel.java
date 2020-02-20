@@ -72,4 +72,15 @@ public class Panel {
     public void setInterviewDuration(int interviewDuration) {
         this.interviewDuration = interviewDuration;
     }
+
+    @Override
+    public String toString() {
+        return "Panel{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", panelResult='" + panelResult + '\'' +
+                ", overAllResult='" + overAllResult + '\'' +
+                ", interviewDuration=" + interviewDuration +
+                '}';
+    }
 }

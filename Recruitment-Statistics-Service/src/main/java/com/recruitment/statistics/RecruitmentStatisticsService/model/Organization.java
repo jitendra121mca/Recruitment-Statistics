@@ -2,6 +2,7 @@ package com.recruitment.statistics.RecruitmentStatisticsService.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class Organization {
@@ -72,5 +73,16 @@ public class Organization {
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", candidate=" + candidate.stream().collect(Collectors.toList()) +
+                ", version=" + version +
+                '}';
     }
 }

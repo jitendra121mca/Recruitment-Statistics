@@ -2,6 +2,7 @@ package com.recruitment.statistics.RecruitmentStatisticsService.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class Candidate {
@@ -49,5 +50,14 @@ public class Candidate {
 
     public void setPanels(List<Panel> panels) {
         this.panels = panels;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", panels=" + panels.stream().collect(Collectors.toList()) +
+                '}';
     }
 }

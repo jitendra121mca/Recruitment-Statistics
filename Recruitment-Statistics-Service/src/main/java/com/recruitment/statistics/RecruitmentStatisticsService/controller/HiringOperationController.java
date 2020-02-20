@@ -16,7 +16,7 @@ public class HiringOperationController {
     HiringOperationService hiringOperationService;
 
     @GetMapping("/results")
-    public Collection<Organization> getPanelResults(){
+    public List<Organization> getPanelResults(){
 
         return  hiringOperationService.getPanelResults();
     }
